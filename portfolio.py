@@ -49,7 +49,7 @@ with col1:
         st.warning("📸 Photo Noemie.jpg non trouvée")
 
 with col2:
-    st.title("Noémie")
+    st.title("Noémie Charlène VICTOR")
     st.subheader("Future Product Owner SIRH")
     st.markdown("📍 **Alternante RH @NaTran**")
     st.markdown("🎓 **L3 RH @Paris 1 Panthéon-Sorbonne**")
