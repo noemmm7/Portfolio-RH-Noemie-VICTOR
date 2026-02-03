@@ -80,7 +80,7 @@ with tab2:
             st.download_button(
                 label="📥 Télécharger mon CV (PDF)",
                 data=file,
-                file_name="CV Noémie VICTOR RH.pdf",
+                file_name="CV Noémie VICTOR.pdf",
                 mime="application/pdf"
             )
     except FileNotFoundError:
