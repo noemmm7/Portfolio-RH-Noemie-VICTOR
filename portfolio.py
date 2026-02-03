@@ -76,7 +76,7 @@ with tab2:
     st.write("") # ESPACE SIMPLE
     st.write("") # ESPACE SIMPLE
     try:
-        with open("CV Noémie VICTOR.pdf", "rb") as file:
+        with open("CV.pdf", "rb") as file:
             st.download_button(
                 label="📥 Télécharger mon CV (PDF)",
                 data=file,
