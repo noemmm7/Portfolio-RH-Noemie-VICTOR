@@ -68,6 +68,51 @@ CONNAISSANCES = {
     "qualites": "Autonomie, curiosité, adaptabilité et esprit d'équipe."
 }
 
+import streamlit as st
+
+# --- SECTION COMPÉTENCES ---
+st.header("🛠 Mes Compétences RH & Digitales")
+
+# Organisation de tes compétences en colonnes pour un rendu "Tableau de Bord"
+blocks = [
+    ("📊 Expertise RH & Paie", ["Gestion des effectifs", "Cycle Intérim", "Onboarding", "Suivi des astreintes", "EgaPro"]),
+    ("💻 SIRH & Outils Digitaux", ["People Ask", "Saisie de flux RH", "Tableaux de bord", "Streamlit", "Python (Notions)"]),
+    ("⚙️ Gestion de Projet & Agilité", ["Product Owner (Cible)", "Méthodologie Scrum", "Rédaction de process", "SIRH Management"]),
+    ("💡 Soft Skills", ["Adaptabilité", "Esprit d'analyse", "Travail en équipe", "Rigueur administrative"])
+]
+
+col1, col2 = st.columns(2)
+
+# Boucle pour afficher tes blocs proprement
+for i, (title, skills) in enumerate(blocks):
+    target = col1 if i % 2 == 0 else col2
+    with target:
+        st.subheader(title)
+        # Affichage sous forme de "tags" pour faire pro
+        skill_tags = ""
+        for s in skills:
+            skill_tags += f" `{s}` "
+        st.markdown(skill_tags)
+
+st.divider()
+
+# --- SECTION LANGUES ---
+col_lang1, col_lang2 = st.columns([1, 2])
+
+with col_lang1:
+    st.subheader("🌐 Langues")
+
+with col_lang2:
+    # Barre de progression pour le Français
+    st.write("Français (Langue maternelle)")
+    st.progress(100)
+    
+    # Barre de progression pour l'Anglais
+    st.write("Anglais (Niveau professionnel - B2)")
+    st.progress(75)
+
+st.info("💡 Ces compétences sont mobilisées quotidiennement dans mes missions d'alternance chez NaTran.")
+
 # 4. Organisation par Onglets
 tab1, tab2 = st.tabs(["💬 Chatbot IA", "📑 Mon Parcours & CV"])
 
