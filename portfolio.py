@@ -1,6 +1,45 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 
+if selected == "Accueil":
+    # 1. Image de bannière (Style montagne ou bureau)
+    st.image("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80", use_column_width=True)
+
+    # 2. Titre avec style forcé en NOIR pour la visibilité
+    st.markdown("""
+        <div style="text-align: center; margin-top: -150px; padding-bottom: 100px;">
+            <h1 style="color: white; text-shadow: 2px 2px 4px #000000; font-size: 60px;">Noémie VICTOR</h1>
+            <h2 style="color: white; text-shadow: 2px 2px 4px #000000;">Étudiante en Gestion des Ressources Humaines</h2>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.write("##") # Espace pour respirer
+
+    # --- NOUVELLE SECTION : PHOTO + TEXTE CÔTE À CÔTE ---
+    # Création de deux colonnes : 1/3 pour la photo, 2/3 pour le texte
+    col_photo, col_texte = st.columns([1, 2])
+    
+    with col_photo:
+        # Affiche ta photo (Assure-toi que le fichier est sur GitHub)
+        st.image("Photo Noemie.jpg", width=300) 
+        
+    with col_texte:
+        st.write("""
+        ### 📍 À propos de moi
+        Bienvenue sur mon portfolio interactif !
+        
+        Actuellement en **Licence 3 RH** à l'Université Paris 1 Panthéon-Sorbonne, 
+        je développe mes compétences en alternance chez **NaTran**. 
+        
+        Passionnée par l'innovation digitale appliquée aux RH, je construis ce projet 
+        pour démontrer ma capacité à lier gestion humaine et outils technologiques.
+        
+        ---
+        🎯 **Objectif :** Master SIRH & Product Owner
+        """)
+
+elif selected == "Compétences":
+
 # 1. CONFIGURATION
 st.set_page_config(page_title="Noémie VICTOR | Portfolio", layout="wide")
 
