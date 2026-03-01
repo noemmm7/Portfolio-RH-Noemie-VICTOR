@@ -55,7 +55,7 @@ if selected == "Accueil":
         je développe mes compétences en alternance chez **NaTran**. 
         
         Passionnée par l'innovation digitale appliquée aux RH, je m'oriente vers le métier 
-        de **Product Owner SIRH**.
+        de **Cheffe de Projets SIRH**.
         """)
 
 elif selected == "Compétences":
