@@ -1,12 +1,37 @@
+import streamlit as st
+from streamlit_option_menu import option_menu
+
+# 1. Configuration
+st.set_page_config(page_title="Noémie VICTOR | Portfolio", layout="wide")
+
+# 2. Navigation
+selected = option_menu(
+    menu_title=None, 
+    options=["À propos", "Compétences", "Parcours", "Chatbot IA"], 
+    icons=["house", "tools", "briefcase", "robot"], 
+    orientation="horizontal",
+    styles={
+        "container": {"background-color": "#f8f9fa"},
+        "nav-link-selected": {"background-color": "#004687"},
+    }
+)
+
+# 3. Contenu
+if selected == "À propos":
+    st.title("Noémie VICTOR")
+    st.write("Bienvenue sur mon portfolio RH.")
+
+elif selected == "Compétences":
+    st.header("🛠 Mes Compétences")
+    st.write("Gestion des effectifs, SIRH, Agilité.")
+
 elif selected == "Parcours":
     st.header("📊 Mon Parcours Académique")
-    st.write("Voici l'évolution de mon parcours étudiant vers mon projet de Master.")
-
-    # --- SECTION TIMELINE ---
+    
+    # --- TA TIMELINE (Le code que tu voulais) ---
     st.write("### 📚 Mon Parcours Scolaire")
-    st.write("") # ESPACE SIMPLE
-
-    # ÉTAPE 1 : MASTER (HAUT) - Ton objectif futur
+    
+    # ÉTAPE 1 : MASTER
     c1, c2 = st.columns([1, 4])
     with c1: 
         st.markdown("**2026-28**")
@@ -15,7 +40,7 @@ elif selected == "Parcours":
         st.caption("Université Paris 1 Panthéon-Sorbonne")
         st.write("↑") 
 
-    # ÉTAPE 2 : L3 (MILIEU) - Ton année actuelle
+    # ÉTAPE 2 : L3
     c3, c4 = st.columns([1, 4])
     with c3: 
         st.markdown("**2025-26**")
@@ -24,7 +49,7 @@ elif selected == "Parcours":
         st.caption("Université Paris 1 Panthéon-Sorbonne")
         st.write("↑")
 
-    # ÉTAPE 3 : DUT (BAS) - Ton diplôme obtenu
+    # ÉTAPE 3 : DUT
     c5, c6 = st.columns([1, 4])
     with c5: 
         st.markdown("**2022-24**")
@@ -33,12 +58,10 @@ elif selected == "Parcours":
         st.caption("IUT de Sénart-Fontainebleau (UPEC)")
 
     st.divider()
-
-    # --- SECTION EXPÉRIENCE ---
     st.write("### 🏢 Expérience chez NaTran")
-    with st.expander("👉 Détails de mes missions d'alternance"):
-        st.write("""
-        - **Pilotage RH :** Tenue de 6 tableaux de bord pour le suivi des effectifs.
-        - **Gestion Administrative :** Cycle complet de l'intérim et rédaction pour les CSP.
-        - **Outils :** Utilisation intensive du SIRH *People Ask*.
-        """)
+    with st.expander("👉 Détails de mes missions"):
+        st.write("- Gestion de l'intérim et pilotage des effectifs.")
+
+elif selected == "Chatbot IA":
+    st.header("🤖 Chatbot")
+    st.write("Posez-moi vos questions !")
